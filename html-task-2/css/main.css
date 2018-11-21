@@ -260,9 +260,10 @@ input {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  justify-content: space-around;
+  outline: none;
+  text-indent: 10px; }
   input::placeholder {
-    padding-left: 10px;
     font-size: 14px;
     color: #bdbdbd; }
 
@@ -789,6 +790,15 @@ footer {
       margin: 0 30px 12px 30px;
       padding: 17px 4px; }
     .contact .contact-form .separate {
-      height: 0px;
-      padding-bottom: 140px;
-      margin-top: 10px; }
+      border: none;
+      border-top: none;
+      border-right: none;
+      border-bottom: 1px solid #cccccc;
+      border-left: none;
+      padding: 20px 353px 100px 19px;
+      outline: none;
+      width: 112px;
+      height: 47px; }
+      .contact .contact-form .separate::placeholder {
+        font-size: 14px;
+        color: #bdbdbd; }

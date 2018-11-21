@@ -40,8 +40,10 @@ input {
   @include align-items-center;
   @include justify-content-space-around;
 
+  outline: none;
+  text-indent: 10px;
+
   &::placeholder {
-    padding-left: 10px;
     font-size: 14px;
     color: $placeholder;
   }
@@ -697,9 +699,18 @@ footer {
     }
 
     .separate {
-      height: 0px;
-      padding-bottom: 140px;
-      margin-top: 10px;
+      border: none;
+      @include input-borders(none, none, 1px solid $socials-n-shadow, none);
+
+      padding: 20px 353px 100px 19px;
+      outline: none;
+      width: 112px;
+      height: 47px;
+
+      &::placeholder {
+        font-size: 14px;
+        color: $placeholder;
+      }
     }
   }
 }
