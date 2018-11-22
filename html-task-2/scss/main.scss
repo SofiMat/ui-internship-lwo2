@@ -690,6 +690,7 @@ footer {
     @include flex;
     @include justify-content-space-around;
     margin: 45px 0 27px 0;
+    width: 100%;
 
     input {
       @include box-sizing;
@@ -699,14 +700,12 @@ footer {
       padding: 17px 4px;
     }
 
-    .separate {
+    textarea {
       border: none;
       @include input-borders(none, none, 1px solid $socials-n-shadow, none);
-
-      padding: 20px 353px 100px 19px;
       outline: none;
-      width: 112px;
-      height: 47px;
+      min-width: 80%;
+      max-width: 80%;
 
       &::placeholder {
         font-size: 14px;
@@ -714,4 +713,12 @@ footer {
       }
     }
   }
+}
+
+.error {
+  @include outline(2px inset #d32815);
+}
+
+.valid {
+  @include outline(2px outset #4cd83a);
 }

@@ -37,11 +37,11 @@
     </div>
     <div class="main-form">
       <h3 class="form-header header">Try Your <span class="free-word">Free</span> Trial Today</h3>
-      <form action="#" name="l-form" class="login-form form">
-        <input type="text" name="username" placeholder="Name" id="l-form-name" onblur="validateName()" />
-        <input type="email" name="email" placeholder="Email" id="l-form-email" onblur="validateEmail()" />
-        <input type="password" name="password" placeholder="Password" id="l-form-pass" onblur="validatePass()" />
-        <input type="submit" value="Get started" class="button" />
+      <form name="l-form" method="POST" class="login-form form" id="login-form">
+        <input type="text" name="username" placeholder="Name" id="l-form-name"/>
+        <input type="email" name="email" placeholder="Email" id="l-form-email"/>
+        <input type="password" name="password" placeholder="Password" id="l-form-pass"/>
+        <input type="submit" value="Get started" class="button"/>
       </form>
     </div>
   </main>
@@ -261,13 +261,13 @@
     <h2 class="section-header header">Contact Us</h2>
     <p class="section-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <div>
-      <form action="#" class="form contact-form" name="q-form">
+      <form action="#" class="form contact-form" id="contact-form" name="contact-form">
         <div class="inputs">
-          <input type="text" name="username" placeholder="Name" id="q-form-name" onblur="validateName()" />
-          <input type="email" name="email" placeholder="Email" id="q-form-email" onblur="validateEmail()" />
-          <input type="text" name="subject" placeholder="Subject" id="q-form-subj" />
+          <input type="text" name="username" placeholder="Name" id="c-form-name" />
+          <input type="email" name="email" placeholder="Email" id="c-form-email"/>
+          <input type="text" name="subject" placeholder="Subject" id="c-form-subj" />
         </div>
-        <textarea name="message" rows="4" cols="50" placeholder="Message" class="separate" id="separate" onblur="checkLength()"></textarea>
+        <textarea name="message" rows="4" cols="50" placeholder="Message" class="separate" id="separate" pattern="[\s\S]{1,250}$" onkeypress="checkLength()"></textarea>
       </form>
 
     </div>
@@ -286,7 +286,7 @@
     </div>
     <p>&copy; 2015 Axure Themes</p>
   </footer>
-  <script src="script.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>

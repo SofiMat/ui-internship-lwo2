@@ -1,40 +1,55 @@
 /* eslint-disable */
+(() => {
+  const PATTERNS = {
+    username: /[A-Za-z]{2,20}/g,
+    email: /^([,a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/g,
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/g,
+    subject: /[\s\S]{0,30}$/g
+  };
 
-function validateName() {
-  const name = document.forms["l-form"]["l-form-name"].value;
-  const validName = /[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,20}$/g;
-  if (!validName.test(name)) {
-    document.getElementById("l-form-name").style.outline = "2px inset #d32815";
-  } else {
-    document.getElementById("l-form-name").style.outline = "2px outset #4cd83a";
+  const VALID_CLASSNAME = 'valid';
+  const ERROR_CLASSNAME = 'error';
+
+  initForms(['login-form', 'contact-form']);
+
+  function initForms(forms) {
+    forms.forEach(formId => handleFormValidation(formId));
+  }
+
+  function handleFormValidation(formName) {
+    const form = document.forms[formName];
+
+    form.addEventListener('keyup', e => validateInput(e.target), true);
+  }
+
+  function validateInput(input) {
+    const { value, name } = input;
+
+    const pattern = PATTERNS[name];
+
+    const isValid = isValidValue(value, pattern);
+
+    const addClass = isValid ? VALID_CLASSNAME : ERROR_CLASSNAME;
+    const removeClass = !isValid ? VALID_CLASSNAME : ERROR_CLASSNAME;
+
+    input.classList.add(addClass);
+    input.classList.remove(removeClass);
+  }
+
+  function isValidValue(val, pattern) {
+    return !!val.match(pattern);
+  }
+
+})();
+
+function checkLength(input) {
+  const textArea = document.getElementById("separate");
+  if( textArea.value.length < 1 && textArea.value.length > 250) {
+    input.toggleClass(input, ['valid', 'error']);
   }
 }
 
-function validateEmail() {
-  const email = document.forms["l-form"]["l-form-email"].value;
-  const validEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/g;
-  if (!validEmail.test(email)) {
-    document.getElementById("l-form-email").style.outline = "2px inset #d32815";
-  } else {
-    document.getElementById("l-form-email").style.outline = "2px outset #4cd83a";
-  }
-}
-
-function validatePass() {
-  const pass = document.forms["l-form"]["l-form-pass"].value;
-  const validPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/g;
-  if (!validPass.test(pass)) {
-    document.getElementById("l-form-pass").style.outline = "2px inset #d32815";
-  } else {
-    document.getElementById("l-form-pass").style.outline = "2px outset #4cd83a";
-  }
-}
-
-function checkLength() {
-  const area = document.getElementById("separate");
-  const maxLength = 250;
-  const minLength = 1;
-  if(area.value.length > maxLength && area.value.length < minLength) {
-    document.getElementById("separate").style.outline = "2px inset #d32815";
-  }
+function submit(e) {
+  console.log(e);
+  e.preventDefault();
 }

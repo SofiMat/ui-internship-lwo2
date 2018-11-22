@@ -784,23 +784,29 @@ footer {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    margin: 45px 0 27px 0; }
+    margin: 45px 0 27px 0;
+    width: 100%; }
     .contact .contact-form input {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       width: 527px;
       margin: 0 30px 12px 30px;
       padding: 17px 4px; }
-    .contact .contact-form .separate {
+    .contact .contact-form textarea {
       border: none;
       border-top: none;
       border-right: none;
       border-bottom: 1px solid #cccccc;
       border-left: none;
-      padding: 20px 353px 100px 19px;
       outline: none;
-      width: 112px;
-      height: 47px; }
-      .contact .contact-form .separate::placeholder {
+      min-width: 80%;
+      max-width: 80%; }
+      .contact .contact-form textarea::placeholder {
         font-size: 14px;
         color: #bdbdbd; }
+
+.error {
+  outline: 2px inset #d32815; }
+
+.valid {
+  outline: 2px outset #4cd83a; }
