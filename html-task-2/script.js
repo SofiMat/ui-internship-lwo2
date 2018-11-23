@@ -39,17 +39,19 @@
   function isValidValue(val, pattern) {
     return !!val.match(pattern);
   }
-
 })();
-
-function checkLength(input) {
-  const textArea = document.getElementById("separate");
-  if( textArea.value.length < 1 && textArea.value.length > 250) {
-    input.toggleClass(input, ['valid', 'error']);
-  }
+function validTextarea() {
+  const val = document.getElementById("separate").value;
+  const pattern = /[\s\S]{1,250}$/g;
+  if (val.match(pattern)) {
+    document.getElementById("separate").classList.add(addClass);
+    document.getElementById("separate").classList.remove(removeClass);
+  } else {
+    document.getElementById("separate").classList.add(removeClass);
+    document.getElementById("separate").classList.remove(addClass);
+  };
 }
 
 function submit(e) {
-  console.log(e);
   e.preventDefault();
 }
