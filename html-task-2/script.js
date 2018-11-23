@@ -40,15 +40,16 @@
     return !!val.match(pattern);
   }
 })();
+
 function validTextarea() {
   const val = document.getElementById("separate").value;
   const pattern = /[\s\S]{1,250}$/g;
   if (val.match(pattern)) {
-    document.getElementById("separate").classList.add(addClass);
-    document.getElementById("separate").classList.remove(removeClass);
+    document.getElementById("separate").classList.add('valid');
+    document.getElementById("separate").classList.remove('error');
   } else {
-    document.getElementById("separate").classList.add(removeClass);
-    document.getElementById("separate").classList.remove(addClass);
+    document.getElementById("separate").classList.add('error');
+    document.getElementById("separate").classList.remove('valid');
   };
 }
 

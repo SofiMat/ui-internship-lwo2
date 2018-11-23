@@ -793,7 +793,6 @@ footer {
       margin: 0 30px 12px 30px;
       padding: 17px 4px; }
     .contact .contact-form textarea {
-      border: none;
       border-top: none;
       border-right: none;
       border-bottom: 1px solid #cccccc;
@@ -806,7 +805,7 @@ footer {
         color: #bdbdbd; }
 
 .error {
-  outline: 2px inset #d32815; }
+  outline: 2px inset #d32815 !important; }
 
 .valid {
-  outline: 2px outset #4cd83a; }
+  outline: 2px outset #4cd83a !important; }

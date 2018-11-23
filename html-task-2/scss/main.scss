@@ -701,8 +701,8 @@ footer {
     }
 
     textarea {
-      border: none;
       @include input-borders(none, none, 1px solid $socials-n-shadow, none);
+
       outline: none;
       min-width: 80%;
       max-width: 80%;
@@ -716,9 +716,9 @@ footer {
 }
 
 .error {
-  @include outline(2px inset #d32815);
+  outline: 2px inset #d32815 !important;
 }
 
 .valid {
-  @include outline(2px outset #4cd83a);
+  outline: 2px outset #4cd83a !important;
 }
