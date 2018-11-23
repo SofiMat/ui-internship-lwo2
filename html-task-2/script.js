@@ -53,6 +53,15 @@ function validTextarea() {
   };
 }
 
-function submit(e) {
-  e.preventDefault();
+function tabsChange(tabId) {
+  document.getElementById(tabId).onclick.value;
+  document.getElementById(tabId).onclick = () => {
+    let tab = document.getElementById("tabs-text-" + tabId);
+    if(id === tabId) {
+      tab.classList.add("display");
+      tab.classList.remove("hide");  
+    } 
+    console.log(id, tabId);
+  };
 }
+

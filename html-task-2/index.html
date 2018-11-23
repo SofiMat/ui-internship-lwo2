@@ -37,7 +37,7 @@
     </div>
     <div class="main-form">
       <h3 class="form-header header">Try Your <span class="free-word">Free</span> Trial Today</h3>
-      <form name="l-form" method="POST" class="login-form form" id="login-form">
+      <form name="l-form" method="POST" class="login-form form" id="login-form" onsubmit="event.preventDefault()">
         <input type="text" name="username" placeholder="Name" id="l-form-name"/>
         <input type="email" name="email" placeholder="Email" id="l-form-email"/>
         <input type="password" name="password" placeholder="Password" id="l-form-pass"/>
@@ -64,12 +64,32 @@
   </section>
   <section class="tabs-bar">
     <div class="tabs">
-      <button class="tabs-item font"><span class="tab-item-text">Tab 1</span></button>
-      <button class="tabs-item font"><span class="tab-item-text">Tab 2</span></button>
-      <button class="tabs-item font"><span class="tab-item-text">Tab 3</span></button>
+      <button class="tabs-item font" id="1" onclick="tabsChange(this.id)"><span class="tab-item-text">Tab 1</span></button>
+      <button class="tabs-item font" id="2" onclick="tabsChange(this.id)"><span class="tab-item-text">Tab 2</span></button>
+      <button class="tabs-item font" id="3" onclick="tabsChange(this.id)"><span class="tab-item-text">Tab 3</span></button>
     </div>
-    <div class="tabs-text">
-      <h4 class="tabs-header header">Tabs with soft transitioning effect.</h4>
+    <div class="tabs-text" id="tabs-text-1">
+      <h4 class="tabs-header header">Tab 1</h4>
+      <p class="tabs-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+        bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+        justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
+        penatibus et magnis dis parturient montes.</p>
+      <p class="tabs-paragraph second font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+        bibendum laoreet.</p>
+      <button class="tabs-button font">Download</button>
+    </div>
+    <div class="tabs-text" id="tabs-text-2">
+      <h4 class="tabs-header header">Tab 2</h4>
+      <p class="tabs-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+        bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+        justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
+        penatibus et magnis dis parturient montes.</p>
+      <p class="tabs-paragraph second font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+        bibendum laoreet.</p>
+      <button class="tabs-button font">Download</button>
+    </div>
+    <div class="tabs-text" id="tabs-text-3">
+      <h4 class="tabs-header header">Tab 3</h4>
       <p class="tabs-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
         justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
@@ -261,7 +281,7 @@
     <h2 class="section-header header">Contact Us</h2>
     <p class="section-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <div>
-      <form action="#" class="form contact-form" id="contact-form" name="contact-form">
+      <form action="#" method="POST" class="form contact-form" id="contact-form" name="contact-form" onsubmit="event.preventDefault()">
         <div class="inputs">
           <input type="text" name="username" placeholder="Name" id="c-form-name" />
           <input type="email" name="email" placeholder="Email" id="c-form-email"/>
@@ -271,7 +291,7 @@
       </form>
 
     </div>
-    <button class="tabs-button font">Send Message</button>
+    <button class="tabs-button font" onsubmit="event.preventDefault()">Send Message</button>
   </section>
   <footer>
     <div class="social-icons soc-ic-foot">
