@@ -53,15 +53,22 @@ function validTextarea() {
   };
 }
 
-function tabsChange(tabId) {
-  document.getElementById(tabId).onclick.value;
-  document.getElementById(tabId).onclick = () => {
-    let tab = document.getElementById("tabs-text-" + tabId);
-    if(id === tabId) {
-      tab.classList.add("display");
-      tab.classList.remove("hide");  
-    } 
-    console.log(id, tabId);
-  };
+function tabsChange(id) {
+  const tabs = document.getElementsByClassName('tabs-text');
+  const tabButton = document.getElementsByClassName('tabs-item')
+  const selectedTab = document.getElementById(`tabs-text-${id}`);
+  for (let i = 1; i <= tabs.length; i++) {
+    const tab = document.getElementById(`tabs-text-${i}`);
+    const tabButton = document.getElementById(i)
+    if(selectedTab == tab) {
+      tab.classList.add('show');
+      tab.classList.remove('hidden');
+      tabButton.classList.add('active');
+    } else {
+      tab.classList.add('hidden');
+      tab.classList.remove('show');
+      tabButton.classList.remove('active');
+    }
+  }
 }
 

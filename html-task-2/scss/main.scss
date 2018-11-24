@@ -276,20 +276,24 @@ footer {
     padding-right: 98px;
   }
 
+  .tab-item-text {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+  }
+
   .tabs-item {
-    padding: 45px 34px;
     font-size: 15px;
     background-color: $item-header;
     color: $white;
+    white-space: nowrap;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     outline: none;
 
     span {
       text-align: center;
-    }
-
-    &:active {
-      background-color: $icons;
     }
 
     &:focus {
@@ -300,12 +304,6 @@ footer {
       background-color: $icons;
     }
 
-    .tab-item-text {
-      text-transform: uppercase;
-      font-weight: bold;
-      display: inline-block;
-      width: 45px;
-    }
   } 
 
   .tabs-text {
@@ -325,10 +323,6 @@ footer {
     .second {
       padding-bottom: 45px;
     }
-  }
-
-  #tabs-text-2, #tabs-text-3 {
-    display: none;
   }
 
   .tabs-img {
@@ -729,14 +723,24 @@ footer {
   outline: 2px outset #4cd83a !important;
 }
 
-.display {
-  display: initial;
-  opacity: 0.5;
-  transition: opacity 2s;
+.show {
+  display: block;
+  animation: disappear 2s;
 }
 
-.hide {
+@keyframes disappear {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  } 
+}
+
+.hidden {
   display: none;
-  opacity: 0.5;
-  transition: opacity 2s;
+}
+
+.active {
+  background-color: $icons !important; 
 }

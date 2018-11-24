@@ -63,12 +63,12 @@
     </div>
   </section>
   <section class="tabs-bar">
-    <div class="tabs">
-      <button class="tabs-item font" id="1" onclick="tabsChange(this.id)"><span class="tab-item-text">Tab 1</span></button>
-      <button class="tabs-item font" id="2" onclick="tabsChange(this.id)"><span class="tab-item-text">Tab 2</span></button>
-      <button class="tabs-item font" id="3" onclick="tabsChange(this.id)"><span class="tab-item-text">Tab 3</span></button>
+    <div class="tabs" id="tabs">
+      <button class="tabs-item font tab-item-text active" id="1" onclick="tabsChange(this.id)">Tab 1</button>
+      <button class="tabs-item font tab-item-text" id="2" onclick="tabsChange(this.id)">Tab 2</button>
+      <button class="tabs-item font tab-item-text" id="3" onclick="tabsChange(this.id)">Tab 3</button>
     </div>
-    <div class="tabs-text" id="tabs-text-1">
+    <div class="tabs-text show" id="tabs-text-1">
       <h4 class="tabs-header header">Tab 1</h4>
       <p class="tabs-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
@@ -78,7 +78,7 @@
         bibendum laoreet.</p>
       <button class="tabs-button font">Download</button>
     </div>
-    <div class="tabs-text" id="tabs-text-2">
+    <div class="tabs-text hidden" id="tabs-text-2">
       <h4 class="tabs-header header">Tab 2</h4>
       <p class="tabs-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
@@ -88,7 +88,7 @@
         bibendum laoreet.</p>
       <button class="tabs-button font">Download</button>
     </div>
-    <div class="tabs-text" id="tabs-text-3">
+    <div class="tabs-text hidden" id="tabs-text-3">
       <h4 class="tabs-header header">Tab 3</h4>
       <p class="tabs-paragraph font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
