@@ -55,12 +55,11 @@ function validTextarea() {
 
 function tabsChange(id) {
   const tabs = document.getElementsByClassName('tabs-text');
-  const tabButton = document.getElementsByClassName('tabs-item')
   const selectedTab = document.getElementById(`tabs-text-${id}`);
   for (let i = 1; i <= tabs.length; i++) {
     const tab = document.getElementById(`tabs-text-${i}`);
     const tabButton = document.getElementById(i)
-    if(selectedTab == tab) {
+    if(selectedTab === tab) {
       tab.classList.add('show');
       tab.classList.remove('hidden');
       tabButton.classList.add('active');
