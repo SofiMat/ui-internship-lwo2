@@ -93,3 +93,7 @@
   display: -ms-grid;
   display: grid;
 }
+
+@mixin outline($value) {
+  outline: $value;
+}
