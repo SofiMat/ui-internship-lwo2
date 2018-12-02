@@ -3,6 +3,7 @@
 function initFormValidation() {
   const PATTERNS = {
     name: /[A-Za-z]{2,20}/g,
+    /* eslint-disable-next-line */
     email: /^([,a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/g,
     /* eslint-disable-next-line */
     password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/g,

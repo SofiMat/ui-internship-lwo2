@@ -7,7 +7,7 @@
     "lint": "./node_modules/.bin/eslint tasks/**/*.js",
     "tdd": "jest --watch",
     "watch:sass": "node-sass -w html-template-3/scss/ -o html-template-3/css/",
-    "compile:sass": "node-sass html-template-3/scss/ -o html-template-3/css/"
+    "compilegi:sass": "node-sass html-template-3/scss/ -o html-template-3/css/"
   },
   "husky": {
     "hooks": {
