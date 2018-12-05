@@ -1,6 +1,29 @@
 /* global document:true */
 /* eslint-disable no-invalid-this */
-function initFormValidation() {
+
+const videoModule = (() => {
+  const videoState = document.querySelector('.player');
+
+  function pauseVideoFunc() {
+    const video = document.querySelector('video');
+    const pauseVideo = document.querySelector('.fa-pause-circle');
+    const playVideo = document.querySelector('.fa-play-circle');
+
+    video.paused ? video.play() : video.pause();
+    pauseVideo.classList.toggle('none');
+    playVideo.classList.toggle('none');
+  }
+
+  return {
+    init: () => {
+      videoState.addEventListener('click', pauseVideoFunc);
+    },
+  };
+})();
+
+videoModule.init();
+
+const formValidationModule = (() => {
   const PATTERNS = {
     name: /[A-Za-z]{2,20}/g,
     /* eslint-disable-next-line */
@@ -12,16 +35,6 @@ function initFormValidation() {
   const FORMS_ON_PAGE = document.querySelectorAll('form');
   const VALID_CLASSNAME = 'valid';
   const ERROR_CLASSNAME = 'error';
-
-  handleFormValidation(['contact-form']);
-  FORMS_ON_PAGE.forEach((el) => {
-    el.addEventListener('submit', submit);
-  });
-
-  function handleFormValidation(formName) {
-    const form = document.forms[formName];
-    form.addEventListener('keyup', (e) => validateInput(e.target), true);
-  }
 
   function validateInput(input) {
     const {value, name} = input;
@@ -72,9 +85,8 @@ function initFormValidation() {
     }
   }
 
-  const buttonSub = document.getElementById('submit-button');
-
   function disable() {
+    const buttonSub = document.getElementById('submit-button');
     const inputs = [...document.forms['contact-form']
         .querySelectorAll('input')];
     const invalid = function(el) {
@@ -88,27 +100,21 @@ function initFormValidation() {
       buttonSub.classList.remove('disabled');
     }
   }
-
   disable();
-}
 
-initFormValidation();
+  return {
+    init: () => {
+      handleFormValidation(['contact-form']);
+      FORMS_ON_PAGE.forEach((el) => {
+        el.addEventListener('submit', submit);
+      });
 
-function initVideo() {
-  const videoState = document.querySelector('.player');
-  const pauseVideo = document.querySelector('.fa-pause-circle');
-  const playVideo = document.querySelector('.fa-play-circle');
+      function handleFormValidation(formName) {
+        const form = document.forms[formName];
+        form.addEventListener('keyup', (e) => validateInput(e.target), true);
+      }
+    },
+  };
+})();
 
-  videoState.addEventListener('click', pauseVideoFunc);
-
-  function pauseVideoFunc() {
-    const video = document.querySelector('video');
-
-    video.paused ? video.play() : video.pause();
-    pauseVideo.classList.toggle('none');
-    playVideo.classList.toggle('none');
-  }
-}
-
-initVideo();
-
+formValidationModule.init();
