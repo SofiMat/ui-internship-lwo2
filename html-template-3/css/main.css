@@ -1071,14 +1071,19 @@ header {
   padding: 108px 0; }
 
 .lb-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   padding-top: 0; }
 
 .lb-pic {
   width: 100%; }
 
 .lb-item {
-  -ms-flex-preferred-size: 32%;
-  flex-basis: 32%;
+  -ms-flex-preferred-size: 33%;
+  flex-basis: 33%;
   position: relative; }
 
 .number {
@@ -1101,7 +1106,8 @@ header {
   position: absolute;
   padding: 11px 16px;
   text-align: center;
-  top: 42%; }
+  top: 42%;
+  right: 85%; }
 
 .lb-text-block {
   border-bottom: 1px solid #e5e5e5;

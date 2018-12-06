@@ -748,6 +748,8 @@ header {
 }
 
 .lb-gallery {
+  @include flex;
+  @include flex-wrap(wrap);
   padding-top: 0;
 }
 
@@ -756,7 +758,7 @@ header {
 }
 
 .lb-item {
-  @include flex-basis(32%);
+  @include flex-basis(33%);
 
   position: relative;
 }
@@ -779,6 +781,7 @@ header {
   padding: 11px 16px;
   text-align: center;
   top: 42%;
+  right: 85%;
 }
 
 .lb-text-block {
@@ -938,6 +941,7 @@ header {
 
 .mogo-blogs {
   padding: 14px 0 0 79px;
+  overflow: auto;
 }
 
 .blog-items {
