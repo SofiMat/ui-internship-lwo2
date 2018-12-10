@@ -1109,6 +1109,7 @@ header {
   font-style: italic;
   font-weight: 300;
   position: absolute;
+
   padding: 2px 0;
   width: 50px;
   height: 60px;
@@ -1120,9 +1121,11 @@ header {
   border-bottom: 1px solid #e5e5e5;
   padding: 17px 0 33px 10px;
   margin-right: 17px; }
+
   .lb-text-block .flow {
     overflow: auto;
     height: 36px; }
+
 
 .lb-icons {
   display: -webkit-box;

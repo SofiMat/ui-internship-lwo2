@@ -958,6 +958,7 @@ header {
 }
 
 .blog-items {
+
   @include grid;
   
   overflow: scroll;
