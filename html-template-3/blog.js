@@ -2,7 +2,6 @@
 /* eslint-disable max-len */
 /* global document:true */
 
-import {formatDate} from './export.js';
 
 export function renderFooterBlogs(blogs) {
   const blogContainer = document.getElementById('blog-items');
@@ -71,3 +70,17 @@ function createLatestBlogItem(model) {
 
   return latestBlogItem;
 }
+
+const formatDate = (date) => {
+  const monthNames = [
+    'Jan', 'Feb', 'Mar',
+    'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep',
+    'Oct', 'Nov', 'Dec',
+  ];
+  return {
+    day: date.getDate(),
+    month: monthNames[date.getMonth()],
+    year: date.getFullYear(),
+  };
+};
