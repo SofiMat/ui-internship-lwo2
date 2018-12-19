@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-redux": "^6.0.0",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,9 +26,12 @@
       "pre-commit": "lint-staged"
     }
   },
- "lint-staged": {
-   "*.js": ["eslint --fix", "git add"]
- },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -41,7 +46,11 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
+    "node-sass": "^4.11.0",
     "pre-push": "^0.1.1",
-    "prettier": "1.15.3"
+    "prettier": "1.15.3",
+    "redux-devtools": "^3.4.2",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.28.0"
   }
 }
